@@ -15,6 +15,14 @@
     "lib": [
       "es2017",
       "dom"
-    ]
+    ],
+    "paths": {
+      "business-tools-lib": [
+        "dist/business-tools-lib"
+      ],
+      "business-tools-lib/*": [
+        "dist/business-tools-lib/*"
+      ]
+    }
   }
 }

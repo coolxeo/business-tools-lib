@@ -116,6 +116,46 @@
           }
         }
       }
+    },
+    "business-tools-lib": {
+      "root": "projects/business-tools-lib",
+      "sourceRoot": "projects/business-tools-lib/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/business-tools-lib/tsconfig.lib.json",
+            "project": "projects/business-tools-lib/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "project": "projects/business-tools-lib/ng-package.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/business-tools-lib/src/test.ts",
+            "tsConfig": "projects/business-tools-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/business-tools-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/business-tools-lib/tsconfig.lib.json",
+              "projects/business-tools-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "business-tools-components"
